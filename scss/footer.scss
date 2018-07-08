@@ -15,6 +15,7 @@ footer {
     .copyright {
         font-size: 15px;
         color: #424244;
+        white-space: nowrap;
         &__company {
             color: $c-blue;
             a {
@@ -90,20 +91,22 @@ footer {
     z-index: 999;
     display: flex;
     align-items: center;
-    background: $c-blue;
+    
     justify-content: center;
     &.opened {
         opacity: 1;
         visibility: visible;
     }
     .icon {
+        fill: #000;
         transform: rotate(-90deg);
         transition: 0.2s;
     }
     &:hover {
-        .icon {
-            fill: #fff;
-        }
-        background: darken( $c-blue, 10%);
+        // .icon {
+        //     fill: #fff;
+        // }
+        // background: darken( $c-blue, 10%);
+        background: $c-blue;
     }
 }

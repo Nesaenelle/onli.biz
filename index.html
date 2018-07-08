@@ -24,7 +24,7 @@
             </symbol>
             <symbol id="icon-arrow" viewBox="0 0 24 24">
                 <path fill="none" d="M0 0h24v24H0z" />
-                <path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z" fill="#fff" />
+                <path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z"/>
             </symbol>
             <symbol id="icon-facebook" viewBox="0 0 24 24">
                 <path fill="#424244" d="M5,3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3M18,5H15.5A3.5,3.5 0 0,0 12,8.5V11H10V14H12V21H15V14H18V11H15V9A1,1 0 0,1 16,8H18V5Z" />
@@ -67,7 +67,7 @@
                 </div>
             </div>
         </header>
-        <div class="container">
+        <div class="container top-block__container">
             <div class="top-block__info" data-animate>
                 <div class="top-block__info_wrapper">
                     <div class="top-block__info_title" data-animate>
@@ -111,11 +111,11 @@
                             <div style="overflow: inherit;padding-bottom:20px;display: inline-block;width: 100%;">
                                 <div class="wrapp-iput">
                                     <input class="name name-input" size="56" maxlength="56" placeholder="Имя" required="required" name="UsersTemp[username]" id="UsersTemp_username" type="text">
-                                    <label class="error name-input-error" for="login_username" style="display: block;"><div>Поле Имя слишком короткое (Минимум: 2 симв.)</div></label>
+                                    
                                 </div>
                                 <div class="wrapp-iput">
                                     <input class="pass mail-input" size="50" maxlength="50" placeholder="E-mail" required="required" name="UsersTemp[email]" id="UsersTemp_email" type="text">
-                                   <label class="error email-input-error" for="login_email" style="display: block;"><div>Email не является правильным E-Mail адресом.</div></label>
+                                   
                                 </div>
                             </div>
                             <input type="hidden" value="2" name="UsersTemp[sponsor_id]" id="UsersTemp_sponsor_id">
@@ -237,7 +237,7 @@
         <div class="blue-form" data-navigation="registration">
             <div class="container">
                 <div class="access-form__title" data-animate> Готовы сделать выбор?
-                    <br>Становитесь партнёром платформы ONLI <br>прямо сейчас!</div>
+                    <br>Становитесь партнёром платформы ONLI прямо сейчас!</div>
                 <div class="access-form" data-animate>
                     <div class="form-home">
                         <form enableclientvalidation="" class="form subscribeform" id="yw2" action="/register/ajaxregister/partnerRegisterValidate" method="post">
