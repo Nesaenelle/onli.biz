@@ -1,16 +1,19 @@
 .slider {
     margin-top: 138px;
     position: relative;
-    height: 500px;
+    height: 575px;
     &__wrapper {
         position: relative; // overflow: hidden;
         // padding-top: 50px;
         // padding-bottom: 50px;
         // height: 427px;
+        padding-top: 70px;
+        overflow: hidden;
     }
     &__scroller {
-        display: flex;
-        justify-content: space-between; // transition: 0.2s; // height: 427px;
+        // display: flex;
+        transition: 0.5s;
+        // justify-content: space-between; // transition: 0.2s; // height: 427px;
     }
     &__arrows {
         &_left,
@@ -49,27 +52,23 @@
         display: flex;
         justify-content: center;
         position: absolute;
-        bottom: 32px;
+        bottom: 34px;
         width: 200px;
         margin: auto;
         left: 0;
         right: 0;
         align-items: center;
         &_item {
-            width: 20px;
-            // min-width: 6px;
-            height: 3px;
-            // min-height: 6px;
-            background: #fff;
-            // border-radius: 100%;
+            width: 20px; // min-width: 6px;
+            height: 3px; // min-height: 6px;
+            background: #fff; // border-radius: 100%;
             margin: 0 5px;
             transition: 0.2s;
             cursor: pointer;
             position: relative;
             &.active {
-                width: 60px;
-                // transform: scale(1.7);
-                background: $c-blue;;
+                width: 60px; // transform: scale(1.7);
+                background: $c-blue;
             }
             &:before {
                 content: '';
@@ -87,10 +86,14 @@
     &__item {
 
         position: relative;
-        width: calc(100%/3 - 20px);
+        // width: calc(100%/3 - 20px);
+        // width: 360px;
         height: 385px;
-        display: none;
-        >div {
+        margin: 0 15px;
+        display: block;
+        float: left;
+        // display: none;
+        > div:not(.slider__item_wave) {
             position: absolute;
             z-index: 0;
             width: 100%;
@@ -100,58 +103,21 @@
             padding: 0 30px;
             background: #fff;
         }
-        &.slideOutUpLeft,
-        &.slideOutUpRight {
-            z-index: 1000;
-            position: absolute; // &:after,
-            // &:before {
-            //     content: none;
-            // }
-            &:nth-child(3n + 1) {
-                margin-left: 0;
-                animation-delay: 0s;
-            }
-            &:nth-child(3n + 2) {
-                margin-left: calc(100%/3 + 10px);
-                animation-delay: 0.2s;
-            }
-            &:nth-child(3n + 3) {
-                margin-left: calc((100%/3)*2 + 20px);
-                animation-delay: 0.4s;
+
+        &_wave {
+            height: 50px;
+            position: relative;
+            top: -45px;
+            svg {
+                 width: 100%;
+                 position: absolute;
+                 bottom: 0;
+                 left: 0;
             }
         }
 
-        &:before {
-            content: '';
-            position: absolute; // z-index: 1;
-            width: 100%;
-            margin: auto;
-            left: 0; // right: 0;
-            top: -25px; // bottom: -6px;
-            background: url(img/wave.png) no-repeat;
-            background-size: contain;
-            height: 30px;
-        } // &:after {
-        //     content: '';
-        //     position: absolute;
-        //     z-index: -2;
-        //     width: 93%;
-        //     margin: auto;
-        //     left: 0;
-        //     right: 0;
-        //     bottom: -12px;
-        //     background: #c26e87;
-        //     height: 93%;
-        // }
-        &.active {
-            display: block; // &:not(.slideOutUpLeft)>div,
-            // &:not(.slideOutUpRight)>div {
-            //     animation-duration: 1s;
-            //     animation-fill-mode: both;
-            //     animation-name: scaleIn;
-            //     transition-timing-function: ease, step-start, cubic-bezier(0.1, 0.7, 1.0, 0.1);
-            // }
-        }
+
+
         &_avatar {
             position: absolute;
             left: 30px; // right: 0;
@@ -163,6 +129,7 @@
             height: 80px;
             z-index: 90;
             box-shadow: 0 6px 30px -12px #000;
+            z-index: 30;
             img {
                 width: 100%;
             }
@@ -180,65 +147,4 @@
             color: $c-blue;
         }
     }
-}
-
-
-
-
-@keyframes slideOutUpLeft {
-    from {
-        transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
-        opacity: 1;
-    }
-
-    to {
-        visibility: hidden;
-        transform: translate3d(-50%, -100%, 0) rotate(-45deg) scale(0.7);
-        opacity: 0;
-    }
-}
-
-@keyframes slideOutUpRight {
-    from {
-        transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
-        opacity: 1;
-    }
-
-    to {
-        visibility: hidden;
-        transform: translate3d(50%, -100%, 0) rotate(45deg) scale(0.7);
-        opacity: 0;
-    }
-}
-
-
-@keyframes scaleIn {
-    from {
-        transform: scale(0.98) translateY(8px);
-    }
-
-    to {
-        transform: scale(1) translateY(0px);
-    }
-}
-
-.scaleIn {
-    animation-duration: 1s;
-    animation-fill-mode: both;
-    animation-name: scaleIn;
-    transition-timing-function: ease, step-start, cubic-bezier(0.1, 0.7, 1.0, 0.1);
-}
-
-.slideOutUpLeft {
-    animation-duration: 1s;
-    animation-fill-mode: both;
-    animation-name: slideOutUpLeft;
-    transition-timing-function: ease, step-start, cubic-bezier(0.1, 0.7, 1.0, 0.1);
-}
-
-.slideOutUpRight {
-    animation-duration: 1s;
-    animation-fill-mode: both;
-    animation-name: slideOutUpRight;
-    transition-timing-function: ease, step-start, cubic-bezier(0.1, 0.7, 1.0, 0.1);
 }

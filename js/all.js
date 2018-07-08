@@ -99,24 +99,27 @@ function isInViewport(el, offset) {
     var controlRight = slider.querySelector('.slider__arrows_right');
 
     var controlsArray = [];
-    var width = slider.offsetWidth;
+    // var width = slider.offsetWidth;
     var curSlide = 0;
     var prevSlide;
     var slidesToShow = 3;
     var isWorking = false;
-    var TOTALCOUNT = 0;
     var interval;
+    var margin = 30;
+    // var itemWidth = 360;
 
 
     onResize();
 
+ 
+
     function getTotalCount() {
-        TOTALCOUNT = Math.ceil((slides.length / slidesToShow));
+        return Math.ceil((slides.length / slidesToShow));
     }
 
     function drowControls() {
         controls.innerHTML = '';
-        for (var i = 0; i < TOTALCOUNT; i++) {
+        for (var i = 0; i < getTotalCount(); i++) {
             var el = document.createElement('div');
 
             el.className = i === 0 ? 'slider__controls_item active' : 'slider__controls_item';
@@ -130,60 +133,36 @@ function isInViewport(el, offset) {
     }
 
     function goTo(index) {
-        if (!isWorking) {
-            isWorking = true;
-
-            curSlide = index;
-
-            var className = (prevSlide >= curSlide) ? 'slideOutUpRight' : 'slideOutUpLeft';
-
-            if (curSlide >= TOTALCOUNT) {
-                curSlide = 0;
-                prevSlide = undefined;
-            }
-            if (curSlide < 0) {
-                curSlide = TOTALCOUNT - 1;
-                prevSlide = 0;
-            }
-
-            var control = controls.querySelector('[data-id="' + curSlide + '"]');
-            controlsArray.forEach(function(r) { r.classList.remove('active') });
-            control.classList.add('active');
-
-            slides.forEach(function(slide, i) {
-                if (i >= (curSlide * slidesToShow) && i < (curSlide * slidesToShow + slidesToShow)) {
-                    slide.classList.add('active');
-                } else {
-                    slide.classList.add(className);
-                    var timeout = setTimeout(function() {
-                        slide.classList.remove('active');
-                        slide.classList.remove(className);
-                        isWorking = false;
-                        clearTimeout(timeout);
-                    }, 1000);
-                }
-            });
-
-            prevSlide = curSlide;
+        if (index >= getTotalCount()) {
+            index = 0;
         }
+
+        if(index < 0 ) {
+            index = getTotalCount() - 1;
+        }
+        
+        var width = slider.offsetWidth;
+        var control = controls.querySelector('[data-id="' + index + '"]');
+        controlsArray.forEach(function(r) { r.classList.remove('active') });
+        control.classList.add('active');
+        var offset = -width * index;
+        scroller.style.transform = 'translateX(' + offset + 'px)';
+        curSlide = index;
     }
 
 
     function refresh() {
         curSlide = 0;
         // autoScroll();
+
+        scroller.style.transform = 'translateX(' + 0 + 'px)';
+        slides.forEach(function(item) {
+            item.style.width = wrapper.offsetWidth / slidesToShow  - 30 + 'px';
+        });
+        
+        scroller.style.width = 9999 + 'px';//(slides.length * margin) + (slides[0].offsetWidth * (slides.length + 10)) + 'px';
         getTotalCount();
         drowControls();
-        slides.forEach(function(slide, i) {
-            if (i >= (curSlide * slidesToShow) && i < (curSlide * slidesToShow + slidesToShow)) {
-                slide.classList.add('active');
-            } else {
-                slide.classList.remove('slideOutUpRight');
-                slide.classList.remove('active');
-                slide.classList.remove('slideOutUpRight');
-                isWorking = false;
-            }
-        });
     }
 
     function autoScroll() {
@@ -201,16 +180,9 @@ function isInViewport(el, offset) {
         autoScroll();
     }, false);
 
-    // controlLeft.addEventListener('click', function() {
-    //     goTo(curSlide - 1);
-    // }, false);
-    // controlRight.addEventListener('click', function() {
-    //     goTo(curSlide + 1);
-    // }, false);
-
 
     function onResize() {
-        if (window.innerWidth > 1440) {
+        if (window.innerWidth > 1280) {
             slidesToShow = 3;
             refresh();
         } else if (window.innerWidth > 980) {
