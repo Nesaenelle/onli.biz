@@ -1,0 +1,109 @@
+footer {
+    background-color: #fff; // padding: 64px 0 68px 0;
+    position: relative;
+    border-top: 1px solid #dfdfdf;
+    .container {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        height: 100%;
+        max-width: 1180px;
+        padding: 70px 40px;
+    }
+
+    .copyright {
+        font-size: 15px;
+        color: #424244;
+        &__company {
+            color: $c-blue;
+            a {
+                color: inherit;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    .footer-socials {
+        &__icon {
+            margin: 0px 6px;
+        }
+        .vk {
+            svg {
+                width: 18px;
+                height: 18px;
+            }
+        }
+        .facebook {
+            svg {
+                width: 19px;
+                height: 18px;
+            }
+        }
+        .inst {
+            svg {
+                width: 18px;
+                height: 18px;
+            }
+        }
+        .tw {
+            svg {
+                width: 17px;
+                height: 18px;
+            }
+        }
+    }
+    .footer-links {
+        // display: flex;
+        &__item {
+            // font-weight: 300;
+            margin-left: 33px;
+            letter-spacing: 0.1px;
+            text-align: right;
+            &:first-child {
+                padding-bottom: 5px;
+            }
+            a {
+                font-size: 15px;
+                color: $c-blue;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+.top-arrow {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    height: 40px;
+    width: 41px;
+    margin: auto;
+    transition: 0.2s;
+    cursor: pointer;
+    opacity: 0;
+    visibility: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    background: $c-blue;
+    justify-content: center;
+    &.opened {
+        opacity: 1;
+        visibility: visible;
+    }
+    .icon {
+        transform: rotate(-90deg);
+        transition: 0.2s;
+    }
+    &:hover {
+        .icon {
+            fill: #fff;
+        }
+        background: darken( $c-blue, 10%);
+    }
+}

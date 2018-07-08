@@ -1,0 +1,225 @@
+// .input {
+//     // width: 382px;
+//     position: relative;
+//     height: 36px;
+
+//     margin-bottom: 36px; // padding: 5px 10px;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     width: 100%;
+//     // white-space: nowrap;
+//      // width: 200px;
+//      // overflow: hidden;
+//     label {
+//         width: 60%;
+//         font-size: 22px;
+//         letter-spacing: 0.4px;
+//     }
+//     input {
+//         width: 125px;
+//         padding: 10px 35px 5px 14px;
+//         outline: none;
+//         border: 1px solid #d7d7d7;
+//         border-radius: 10px;
+//         font-size: 22px;
+//         height: 46px;
+
+//         &::-webkit-input-placeholder {
+//             color: #ddd;
+//             font-weight: 300;
+//         }
+//         &::-moz-placeholder {
+//             color: #ddd;
+//             font-weight: 300;
+//         }
+//         /* Firefox 19+ */
+//         &:-moz-placeholder {
+//             color: #ddd;
+//             font-weight: 300;
+//         }
+//         /* Firefox 18- */
+//         &:-ms-input-placeholder {
+//             color: #ddd;
+//             font-weight: 300;
+//         }
+//         &:focus {
+//             // box-shadow: 0 0 1px 0px #000;
+//         }
+//         &.has-error {
+//             // box-shadow: none;
+//             border: 2px solid #ed1c24;
+//         }
+//         &.valid {
+//             border: 2px solid #00a651;
+//         }
+//     }
+//     &.dropdown {
+//         position: relative;
+//         &:after {
+//             position: absolute;
+//             top: 35px;
+//             right: 20px;
+//             content: '';
+//             border: solid #d7d7d7;
+//             border-width: 0 1px 1px 0;
+//             display: inline-block;
+//             padding: 4px;
+//             transform: rotate(45deg);
+//             -webkit-transform: rotate(45deg);
+//             transition: 0.1s;
+//         }
+//         &.opened {
+//             &:before {
+//                 content: '';
+//                 top: 56px;
+//                 width: calc(100% - 2px);
+//                 position: absolute;
+//                 background: #fff;
+//                 height: 2px;
+//                 left: 1px;
+//                 z-index: 1000;
+//             }
+//             &:after {
+//                 top: 40px;
+//                transform: rotate(-135deg);
+//                -webkit-transform: rotate(-135deg);
+//             }
+//             .dropdown-container {
+//                 display: block;
+//             }
+//         }
+//         .dropdown-container {
+//             display: none;
+//             width: 500px;
+//             position: absolute;
+//             top: 57px;
+//             background: #fff;
+//             padding: 10px 0 30px 0;
+//             z-index: 999;
+//             border-radius: 0 10px 10px 10px;
+//             border: 1px solid #d7d7d7;
+//             ul {
+//                 li {
+//                     padding: 0 10px;
+//                     &.dropdown-list__title {
+//                         font-weight: 800;
+//                         &:hover {
+//                             cursor: auto;
+//                             text-decoration: none;
+//                         }
+//                     }
+//                     &.selected {
+//                         background: #efefef;
+//                     }
+//                     margin: 2px 0px 3px 0px;
+//                     font-size: 14px;
+//                     &:hover {
+//                         cursor: pointer;
+//                         text-decoration: underline;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// .radio {
+//     width: 100%;
+//     margin-bottom: 25px;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     $c: &;
+//     label {
+//         width: 60%;
+//         font-size: 22px;
+//         letter-spacing: 0.4px;
+//     }
+
+//     input {
+//         display: none;
+//         &:checked {
+//             &[value="1"] {
+//                 ~#{$c}__toggle {
+//                     &>label:first-child {
+//                         box-shadow: 0 0 0 2px #1ebec4, 0 0 20px -2px #1ebec4;
+//                         border-color: #1ebec4;
+//                         background: url(img/calculator/checkmark_active.png) no-repeat;
+//                         background-size: 50%;
+//                     }
+//                 }
+//             }
+//             &[value="0"] {
+//                 ~#{$c}__toggle {
+//                     &>label:last-child {
+//                         box-shadow: inset 0 0 0 2px #fe84a6, 0 0 20px -2px #fe84a6;
+//                         border-color: #fe84a6;
+//                         background: url(img/calculator/close_active.png) no-repeat;
+//                         background-size: 50%;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+//     &__toggle {
+//         width: 130px;
+//         display: flex;
+//         justify-content: space-between;
+//         &_yes {
+//             @extend .radio-control;
+//             background: url(img/calculator/checkmark.png) no-repeat;
+//             background-position: center!important;
+//             background-size: 50%;
+//             position: relative;
+//             &:before {
+//                 content: '';
+//                 position: absolute;
+//                 z-index: 1;
+//                 width: calc(100% + 10px);
+//                 height: calc(100% + 10px);
+//                 margin-left: -5px;
+//                 margin-top: -5px;
+//                 pointer-events: auto;
+//             }
+//         }
+//         &_no {
+//             @extend .radio-control;
+//             background: url(img/calculator/close.png) no-repeat;
+//             background-position: center!important;
+//             background-size: 50%;
+//             position: relative;
+//             &:before {
+//                 content: '';
+//                 position: absolute;
+//                 z-index: 1;
+//                 width: calc(100% + 10px);
+//                 height: calc(100% + 10px);
+//                 margin-left: -5px;
+//                 margin-top: -5px;
+//                 pointer-events: auto;
+//             }
+//         }
+//     }
+// }
+
+// .radio-control {
+//     transition: 0.2s;
+//     width: 52px;
+//     min-width: 52px;
+//     max-width: 52px;
+//     height: 52px;
+//     box-shadow: inset 0 0 0px 1px #d7d7d7;
+//     border-radius: 100%;
+//     cursor: pointer;
+// }
+
+// input[type=number]::-webkit-inner-spin-button, 
+// input[type=number]::-webkit-outer-spin-button { 
+//   -webkit-appearance: none; 
+//   margin: 0; 
+// }
+
+// input[type=number] {
+//     -moz-appearance:textfield;
+// }
