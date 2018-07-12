@@ -1,7 +1,7 @@
 .is-not-on-top {
     header {
         top: 0;
-        background: #1b1b1b;
+        background: rgba(26,26,26, 0.96);
         .container {}
         nav ul li a {
             // padding: 20px 0;
@@ -66,22 +66,25 @@ header {
                     position: relative;
                     font-weight: 400;
                     position: relative;
-                    position: relative;
                     &:before {
-                        opacity: 0;
+                        // opacity: 0;
                         content: '';
                         position: absolute;
                         top: 0;
+                        margin: auto;
                         left: 0;
-                        width: 100%;
-                        background: $c-blue;
+                        right: 0;
+                        width: 0%;
+                        background: none;
                         height: 1px;
                         transition: 0.2s;
                     }
                     &.active {
                         color: $c-blue;
                         &:before {
-                            opacity: 1;
+                            width: 100%;
+                            background: $c-blue;
+                           
                         }
                     }
                 }
@@ -89,7 +92,8 @@ header {
                     a {
                         color: $c-blue;
                         &:before {
-                            opacity: 1;
+                           width: 100%;
+                           background: $c-blue;
                         }
                     }
                 }

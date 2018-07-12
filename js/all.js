@@ -365,3 +365,23 @@ function isInViewport(el, offset) {
 
 
 events.trigger();
+
+
+
+
+
+// (function() {
+//     var elements = document.querySelectorAll('[data-paralax]');
+
+//     window.addEventListener('mousemove', function(e) {
+//         var deltaX = -e.clientX * 0.005;
+//         deltaY = -e.clientY * 0.01;
+
+//         elements.forEach(function(item) {
+//             var valX = deltaX * parseFloat(item.getAttribute('data-paralax'));
+//             var valY = deltaY * parseFloat(item.getAttribute('data-paralax'));
+//             item.style.transform = 'translate(' + valX + 'px, ' + valY + 'px)';
+//         });
+//     }, false);
+
+// }());

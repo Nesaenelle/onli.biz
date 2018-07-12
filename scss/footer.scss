@@ -29,6 +29,15 @@ footer {
     .footer-socials {
         &__icon {
             margin: 0px 6px;
+            svg {
+                transition: 0.5s!important;
+                fill: #424244;
+            }
+            &:hover {
+                svg {
+                    fill: $c-blue;
+                }
+            }
         }
         .vk {
             svg {
@@ -51,6 +60,12 @@ footer {
         .tw {
             svg {
                 width: 17px;
+                height: 18px;
+            }
+        }
+        .youtube {
+            svg {
+                width: 20px;
                 height: 18px;
             }
         }
@@ -103,9 +118,10 @@ footer {
         transition: 0.2s;
     }
     &:hover {
-        // .icon {
-        //     fill: #fff;
-        // }
+
+        .icon {
+            fill: #fff;
+        }
         // background: darken( $c-blue, 10%);
         background: $c-blue;
     }

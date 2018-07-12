@@ -94,6 +94,7 @@ h1 {
     padding-top: 25px;
     min-height: 700px;
     overflow: hidden;
+    background-attachment: fixed;
     &__container {
         height: 100%;
     }
@@ -335,7 +336,7 @@ h1 {
             padding: 10px 50px;
             width: 100%;
             font-family: 'Montserrat', sans-serif; // box-shadow: 0 0 50px -20px $c-blue;
-            box-shadow: 0 7px 68px -32px $c-blue;
+            box-shadow: 0 7px 68px -32px #00abff;
             border: 1px solid #158cfd0d;
             border-radius: 0px 0px 0px 0px;
             border-left: none;
@@ -696,12 +697,14 @@ h1 {
             background: linear-gradient( rgba(26, 26, 26, 0.9),
             rgba(26, 26, 26, 0.9)), url(img/type-2.jpg);
             background-size: cover;
+            background-position: center;
             color: #fff;
         }
         &.last {
             background: linear-gradient( rgba(255, 255, 255, 0.9),
             rgba(255, 255, 255, 0.9)), url(img/type-1.jpg);
             background-size: cover;
+            background-position: center;
         }
         &_icon {
             max-width: 100px; // min-width: 100px;
@@ -752,9 +755,13 @@ h1 {
     .access-form {
         margin-top: 43px;
         padding: 30px 30px 30px 30px;
+        border-color: #76bcff;
     }
     .access-form .form-home .form .btn {
         background: #1a1a1a;
+        &:hover {
+            background: #424244;
+        }
     }
     .access-form__info {
         color: #fff;
@@ -795,6 +802,14 @@ h1 {
         opacity: 0;
         animation-fill-mode: forwards;
         $c: &;
+        &:hover {
+            #{$c}_img {
+                background: $c-blue;
+                .icon {
+                    fill: #fff;
+                }
+            }
+        }
         &[data-animate="true"] {
             &:nth-child(1) {
                 animation-duration: 1s;
@@ -836,8 +851,20 @@ h1 {
             box-shadow: 0 7px 48px -10px $c-blue;
             margin-right: 39px;
             position: relative;
+            transition: 0.3s;
             img {
                 width: 40px;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
+            .icon {
+                fill: $c-blue;
+                width: 40px;
+                height: 40px;
                 position: absolute;
                 top: 0;
                 bottom: 0;
@@ -945,6 +972,7 @@ h1 {
     padding-top: 100px;
     padding-bottom: 86px;
     overflow: hidden;
+    background-attachment: fixed;
     .container {
         padding: 0 20px;
     }

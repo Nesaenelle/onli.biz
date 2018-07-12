@@ -18,12 +18,6 @@
         padding: 200px 60px 181px 117px;
     }
 
-    .issues__item:nth-child(2) .issues__item_images img:nth-child(2) {
-        // width: 350px;
-        right: -150px;
-        // bottom: -54px;
-    }
-
 
     .issues__item:nth-child(3) .issues__item_images img:nth-child(1) {
         // width: 400px;
@@ -82,6 +76,12 @@
 
 
 
+
+    .issues__item:nth-child(2) .issues__item_images img:nth-child(2) {
+        width: 350px;
+        right: -150px;
+        // bottom: -54px;
+    }
 
     .issues__item:nth-child(3) .issues__item_images img:nth-child(1) {
         // width: 350px;
@@ -248,7 +248,7 @@
         position: static;
         align-items: initial;
         height: initial;
-        padding-top: 30px;
+        padding-top: 50px;
         &_title {
             padding: 0;
             font-size: 42px;
@@ -493,7 +493,7 @@
                 right: -8px;
                 bottom: -68px;
 
-                width: 350px;
+                width: 300px;
             }
 
             &:nth-child(3) .issues__item_images img:nth-child(1) {
@@ -888,6 +888,10 @@
         }
     }
 
+    .slider__item_wave {
+        top: -45px;
+    }
+
     .last-reg-block__descr {
         font-size: 16px;
     }
@@ -979,9 +983,10 @@
     }
     .issues__item:nth-child(2) .issues__item_images img:nth-child(1) {
         width: 100%;
+        max-width: 400px;
     }
     .issues__item:nth-child(2) .issues__item_images img:nth-child(2) {
-        width: 290px;
+        // width: 250px;
         right: -50px;
     }
     .issues__item:nth-child(3) .issues__item_images img:nth-child(1) {
@@ -1011,11 +1016,11 @@
         padding: 0 20px;
     }
     .slider__item_descr {
-        margin-top: 20px;
+        margin-top: 15px;
         font-size: 14px;
     }
     .slider__item_name {
-        // margin-top: 15px;
+        margin-top: 45px;
     }
 
     .slider__item:after {
@@ -1095,6 +1100,22 @@
     .advantages__item_descr {
         letter-spacing: -0.5px;
         padding: 0;
+    }
+
+    .issues__item:nth-child(2) .issues__item_images img:nth-child(2) {
+        width: 250px;
+    }
+
+
+    .slider__item_descr {
+        margin-top: 15px;
+    }
+    .slider__item_name {
+        margin-top: 35px;
+    }
+
+    .slider__item>div:not(.slider__item_wave) {
+        padding: 0 20px;
     }
 }
 
