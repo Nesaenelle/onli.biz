@@ -48,6 +48,12 @@
     .issues__item:nth-child(4) .issues__item_images img:nth-child(3) {
         // width: 300px;
     }
+
+    .business-types__item_list ul li {
+        br {
+            display: none; 
+        }
+    }
 }
 
 

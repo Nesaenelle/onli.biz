@@ -237,7 +237,7 @@
                         <li><a href="#" data-navigation-link="advantages" data-navigation-offset="100">Преимущества</a></li>
                         <li><a href="#" data-navigation-link="feedback" data-navigation-offset="100">Отзывы</a></li>
                         <li><a href="#" data-navigation-link="registration">Регистрация</a></li>
-                        <li><a href="{$startlink}">Вход</a></li>
+                        <li><a href="{$startlink}/#enter">Вход</a></li>
                     </ul>
                 </nav>
                 <div class="hamburger" data-burger>
@@ -249,7 +249,7 @@
                         <li><a href="#" data-navigation-link="advantages" data-navigation-offset="100">Преимущества</a></li>
                         <li><a href="#" data-navigation-link="feedback" data-navigation-offset="100">Отзывы</a></li>
                         <li><a href="#" data-navigation-link="registration">Регистрация</a></li>
-                        <li><a href="{$startlink}">Вход</a></li>
+                        <li><a href="{$startlink}/#enter">Вход</a></li>
                     </ul>
                 </div>
             </div>
